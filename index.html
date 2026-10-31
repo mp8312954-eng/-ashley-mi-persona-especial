@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ashley ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: #fff;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, #b77bd9, transparent 50%),
+    linear-gradient(145deg, #32164f, #702c83, #d36b9e);
+  overflow-x: hidden;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 650px;
+  margin: 65px auto;
+  padding: 30px 24px;
+  background: rgba(255, 235, 250, 0.13);
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 25px;
+  box-shadow: 0 0 35px #f6a8df66;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #ffe0f2;
+  font-size: 36px;
+  text-shadow: 0 0 15px #ffb4e6;
+}
+
+h2 {
+  color: #ffe1f3;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.decoracion {
+  font-size: 28px;
+  margin: 15px;
+}
+
+button {
+  background: linear-gradient(120deg, #ff80bd, #c77bff);
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ffb5e8;
+  margin-top: 20px;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+#sorpresa {
+  display: none;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 210, 239, .18);
+  border: 1px solid #ffd5f1;
+  animation: aparecer 1.2s ease;
+}
+
+#sorpresa.visible {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+.petalo {
+  position: fixed;
+  top: -30px;
+  z-index: 1;
+  pointer-events: none;
+  animation: caer linear forwards;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh) rotate(500deg);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  padding: 20px;
+  color: #ffe3f5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+  <div class="decoracion">🦋 🌷 ✨ 🌸</div>
+
+  <h1>Para Ashley ❤️</h1>
+
+  <h2>Una pequeña sorpresa para ti</h2>
+
+  <p>
+    Ashley, quizás no tenga la manera de estar a tu lado
+    y entregarte esto personalmente, pero quiero que sepas
+    que incluso a través de una pantalla puedo demostrarte
+    lo especial que eres para mí.
+  </p>
+
+  <p>
+    Me gusta tu forma de ser, tu manera de hacerme feliz
+    y cada pequeño momento que compartimos.
+    No necesito que todo sea perfecto, solamente quiero
+    seguir conociéndote y creando recuerdos contigo.
+  </p>
+
+  <p>
+    Preparé esto con mucho cariño porque hay algo que
+    llevo tiempo queriendo preguntarte...
+  </p>
+
+  <div class="decoracion">🌹 💗 🌹</div>
+
+  <h2>¿Quieres ser mi novia, Ashley?</h2>
+
+  <button id="aceptar" onclick="mostrarSorpresa()">
+    Claro que sí ❤️
+  </button>
+
+  <section id="sorpresa">
+    <h1>¡Entonces comienza nuestra historia! 💗</h1>
+
+    <p>
+      No sabes lo feliz que me hace poder compartir
+      este momento contigo.
+    </p>
+
+    <p>
+      Quiero que sigamos construyendo algo bonito,
+      con cariño, confianza, paciencia y muchas sonrisas.
+      Aunque exista distancia entre nosotros,
+      quiero demostrarte cada día lo importante que eres.
+    </p>
+
+    <h2>Gracias por elegirme, Ashley. 🌷</h2>
+
+    <div class="decoracion">🦋 💐 💗 ✨</div>
+  </section>
+
+</div>
+
+<footer>
+  Hecho con mucho cariño para Ashley ❤️
+</footer>
+
+<script>
+function mostrarSorpresa() {
+  document.getElementById("sorpresa").classList.add("visible");
+  document.getElementById("aceptar").style.display = "none";
+}
+
+const flores = ["🌸", "🌷", "🌺", "💮"];
+
+function crearPetalo() {
+  const petalo = document.createElement("span");
+  petalo.className = "petalo";
+  petalo.textContent = flores[Math.floor(Math.random() * flores.length)];
+
+  petalo.style.left = Math.random() * 100 + "vw";
+  petalo.style.fontSize = (14 + Math.random() * 13) + "px";
+  petalo.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(petalo);
+
+  setTimeout(() => petalo.remove(), 10000);
+}
+
+setInterval(crearPetalo, 650);
+</script>
+
+</body>
+</html>
